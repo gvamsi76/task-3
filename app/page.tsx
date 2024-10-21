@@ -37,7 +37,7 @@ const Home: React.FC = () => {
       const episodeData = await getEpisodeById(selectedEpisodeId);
       setSelectedEpisodeName(episodeData.name); 
 
-      const characterIds = episodeData.characters.map((url: string) =>
+      const characterIds = episodeData?.characters.map((url: string) =>
         url.split('/').pop()
       );
 

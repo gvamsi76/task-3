@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
-import { List, ListItem, ListItemText, Box } from '@mui/material';
-
+import { List, ListItemText, Box } from '@mui/material';
+import ListItem from '@mui/material/ListItem';
 interface Episode {
     id: number;
     name: string;
@@ -27,7 +27,8 @@ const SideBar: React.FC<SidebarProps> = ({ episodes, selectedEpisodeId, onSelect
                 {episodes.map((episode) => (
                     <ListItem
                         key={episode.id}
-                        button
+                       role=' button'
+                        component="li" 
                         onClick={() => onSelectEpisode(episode.id)}
                         sx={{
                             backgroundColor: selectedEpisodeId === episode.id ? '#e0e0e0' : 'transparent',
